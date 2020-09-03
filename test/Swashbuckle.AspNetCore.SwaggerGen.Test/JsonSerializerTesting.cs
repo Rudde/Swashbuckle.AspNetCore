@@ -1,4 +1,6 @@
-﻿using System.Text.Json;
+﻿using System;
+using System.Collections.Generic;
+using System.Text.Json;
 using Xunit;
 
 namespace Swashbuckle.AspNetCore.SwaggerGen.Test
@@ -11,11 +13,15 @@ namespace Swashbuckle.AspNetCore.SwaggerGen.Test
         [Fact]
         public void Serialize()
         {
-            var dto = new TestDto();
+            object dto = new TestDto { Prop1 = 123 };
+            //var dto = new Dictionary<string, object>
+            //{
+            //    ["foo"] = "bar"
+            //};
 
-            var json = JsonSerializer.Serialize(dto);
+            var jsonString = JsonSerializer.Serialize(dto);
 
-            //Assert.Equal("{\"Prop1\":null}", json);
+            //throw new Exception(jsonString);
         }
 
         [Fact]

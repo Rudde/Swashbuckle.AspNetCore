@@ -47,7 +47,7 @@ namespace ReDoc
             app.UseSwagger(c =>
             {
                 c.RouteTemplate = "api-docs/{documentName}/swagger.json";
-                c.SerializeAsV2 = true;
+                //c.SerializeAsV2 = true;
             });
 
             app.UseReDoc(c =>
